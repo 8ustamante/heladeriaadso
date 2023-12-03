@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladeria ADSO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h1>Heladeria ADSO</h1>
+        <div class="row justify-content-center text-center">
+            <div class="col-12 col-md-6 border pb-5">
+                <img style="width: 150px;" src="img/helado_img.png" alt="">
+                <h3 id="nm_helado1">Helado mandarina</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere fugit eos.</p>
+                <p>$<span id="valor_helado1">18.00</span></p>
+                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ct_sele" onclick="agregarProducto(1)">Agregar</button>
+            </div>
+            <div class="col-12 col-md-6 border pb-5">
+                <img style="width: 150px;" src="img/helado_img.png" alt="">
+                <h3 id="nm_helado">Helado pasas</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere fugit eos.</p>
+                <p>$<span id="valor_helado">8.00</span></p>
+                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ct_sele" onclick="agregarProducto(2)">Agregar</button>
+            </div>
+            <div class="col-12 col-md-6 border pb-5">
+                <img style="width: 150px;" src="img/helado_img.png" alt="">
+                <h3 id="nm_helado">Helado vainilla</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere fugit eos.</p>
+                <p>$<span id="valor_helado">15.00</span></p>
+                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ct_sele" onclick="agregarProducto(3)">Agregar</button>
+            </div>
+            <div class="col-12 col-md-6 border pb-5">
+                <img style="width: 150px;" src="img/helado_img.png" alt="">
+                <h3 id="nm_helado">Helado chocolate</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere fugit eos.</p>
+                <p>$<span id="valor_helado">6.00</span></p>
+                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ct_sele" onclick="agregarProducto(4)">Agregar</button>
+            </div>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Carrito">
+                Carrito
+            </button>
+        </div>
+
+
+
+        <!-- Modal Carrito-->
+        <div class="modal fade" id="Carrito" tabindex="-1" aria-labelledby="CarritoLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="CarritoLabel">Carrito</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Cantidad</th>
+                                        <th>Total por producto</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="datos">
+                
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>Total a pagar: <span id="saldo">0.00</span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="pagar()">Pagar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal cantidad -->
+        <div class="modal fade" id="ct_sele" tabindex="-1" aria-labelledby="ct_seleLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="ct_seleLabel">Seleccionó: <span id="nm_helado"></span></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex">
+                            <p class="pt-2">Cantidad: </p>
+                        <input type="number" class="form-control w-50 ms-2" placeholder="Ingrese cantidad" aria-label="Recipient's username with two button addons" id="ct_plato">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="cantidad_plato()">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+
+        <script src="js/helala.js"></script>
+</body>
+
+</html>
